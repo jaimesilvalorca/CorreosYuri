@@ -1,0 +1,9 @@
+npm i cors consumir api desde fuera del localhost
+npm i express nodemon // para instalar libreria de server
+npm i mariadb bd
+npm i --save sequelize orm para leer base de datos
+npm i -g typescript
+npm i express
+tsc --init
+
+tsc para compilar
