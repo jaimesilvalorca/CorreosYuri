@@ -18,6 +18,7 @@ const db_1 = __importDefault(require("./config/db"));
 const empleados_1 = __importDefault(require("./models/empleados"));
 const contactos_1 = __importDefault(require("./models/contactos"));
 const cargas_1 = __importDefault(require("./models/cargas"));
+const usuario_1 = __importDefault(require("./models/usuario"));
 class App {
     constructor() {
         this.app = (0, express_1.default)();
@@ -44,6 +45,7 @@ class App {
             yield empleados_1.default.sync({ alter: true });
             yield contactos_1.default.sync({ alter: true });
             yield cargas_1.default.sync({ alter: true });
+            yield usuario_1.default.sync({ alter: true });
             yield db_1.default.sync({ alter: true });
         });
     }

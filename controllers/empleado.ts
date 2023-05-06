@@ -14,7 +14,8 @@ export default class Empleado {
 		const empleados = Empleados.create({
 			rut: rut
 		})
-		/* return res.json({msg: 'procesado'}); */
+		return res.status(201).send('rut enviado');
+	
 	}
 	
 }

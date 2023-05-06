@@ -20,7 +20,7 @@ class Empleado {
             const empleados = empleados_1.default.create({
                 rut: rut
             });
-            /* return res.json({msg: 'procesado'}); */
+            return res.status(201).send('rut enviado');
         });
     }
 }
