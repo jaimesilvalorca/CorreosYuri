@@ -53,7 +53,6 @@ const Empleados = db.define<EmpleadosModel>('Empleados', {
 	},
 	fecha_ingreso:{
 		type: DataTypes.DATE,
-		defaultValue: DataTypes.NOW,
 		allowNull: true
 	}
 	
