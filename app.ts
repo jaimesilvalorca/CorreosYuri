@@ -4,7 +4,7 @@ import router from './router/routes';
 import sequelize  from './config/db';
 import Empleados from './models/empleados';
 import Contactos from './models/contactos';
-
+import Cargas from './models/cargas';
 
 class App{
     private app: Express;
@@ -33,6 +33,7 @@ class App{
         }  */
         await Empleados.sync({alter:true})
         await Contactos.sync({alter:true})
+        await Cargas.sync({alter:true})
         await sequelize.sync({ alter: true });
     }
 
