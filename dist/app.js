@@ -15,6 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const routes_1 = __importDefault(require("./router/routes"));
 const db_1 = __importDefault(require("./config/db"));
+const empleados_1 = __importDefault(require("./models/empleados"));
+const contactos_1 = __importDefault(require("./models/contactos"));
 class App {
     constructor() {
         this.app = (0, express_1.default)();
@@ -24,19 +26,23 @@ class App {
     }
     middleware() {
         return __awaiter(this, void 0, void 0, function* () {
+            this.app.use(express_1.default.json());
             console.log("routa");
             this.app.use("/api", routes_1.default);
         });
     }
     baseDatos() {
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                yield db_1.default.authenticate();
-                console.log("conexion lista");
-            }
-            catch (error) {
-                console.log("error", error);
-            }
+            /*   try {
+                 await sequelize.authenticate();
+                 console.log("conexion lista")
+             } catch (error) {
+                 console.log("error", error)
+                 
+             }  */
+            yield empleados_1.default.sync({ alter: true });
+            yield contactos_1.default.sync({ alter: true });
+            yield db_1.default.sync({ alter: true });
         });
     }
     conexion() {

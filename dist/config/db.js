@@ -9,6 +9,6 @@ const { database, username, password, host } = conf_env_1.default;
 /* const dbType ='mysql'; */
 const db = new sequelize_1.Sequelize(database, username, password, {
     host: host,
-    dialect: 'mariadb'
+    dialect: 'mariadb',
 });
 exports.default = db;

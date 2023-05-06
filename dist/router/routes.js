@@ -5,6 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const ppto_1 = __importDefault(require("../controllers/ppto"));
+const empleado_1 = __importDefault(require("../controllers/empleado"));
+const empleado = new empleado_1.default();
 const ppto = new ppto_1.default();
 const router = (0, express_1.Router)();
 router.get('/', (req, res) => {
@@ -14,4 +16,5 @@ router.get('/', (req, res) => {
     });
 });
 router.get('/prueba', ppto.prueba);
+router.post('/rut', empleado.login);
 exports.default = router;

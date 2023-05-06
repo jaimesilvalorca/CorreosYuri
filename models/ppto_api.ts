@@ -58,4 +58,5 @@ const PptoApi = db.define<PptoApiModel>('PptoApi', {
 	timestamps: false
 });
 
+
 export default PptoApi;

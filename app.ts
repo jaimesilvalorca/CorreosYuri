@@ -2,6 +2,9 @@ import express, {Express}  from 'express';
 import cors from 'cors';
 import router from './router/routes';
 import sequelize  from './config/db';
+import Empleados from './models/empleados';
+import Contactos from './models/contactos';
+
 
 class App{
     private app: Express;
@@ -15,18 +18,22 @@ class App{
     }
 
     async middleware(){
+        this.app.use(express.json());
         console.log("routa");
         this.app.use("/api",router);
     }
 
     async baseDatos(){
-        try {
+       /*   try {
             await sequelize.authenticate();
             console.log("conexion lista")
         } catch (error) {
             console.log("error", error)
             
-        }
+        }  */
+        await Empleados.sync({alter:true})
+        await Contactos.sync({alter:true})
+        await sequelize.sync({ alter: true });
     }
 
 
