@@ -6,6 +6,7 @@ import Empleados from './models/empleados';
 import Contactos from './models/contactos';
 import Cargas from './models/cargas';
 import Usuario from './models/usuario';
+import Comuna from './models/comuna';
 
 class App{
     private app: Express;
@@ -36,6 +37,7 @@ class App{
         await Contactos.sync({alter:true})
         await Cargas.sync({alter:true})
         await Usuario.sync({alter:true})
+        await Comuna.sync({alter:true})
         await sequelize.sync({ alter: true });
     }
 

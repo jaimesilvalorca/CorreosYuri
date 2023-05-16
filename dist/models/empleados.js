@@ -42,7 +42,6 @@ const Empleados = db_1.default.define('Empleados', {
     },
     fecha_ingreso: {
         type: sequelize_1.DataTypes.DATE,
-        defaultValue: sequelize_1.DataTypes.NOW,
         allowNull: true
     }
 }, {
